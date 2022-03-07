@@ -219,6 +219,7 @@ Close.TextScaled = true
 Close.TextSize = 14.000
 Close.TextWrapped = true
 Chooser.Text = "Random Chooser"
+WinnerFrame.Draggable = true
 
 UICorner_5.Parent = Close
 
