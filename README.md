@@ -151,7 +151,7 @@ Chooser.TextWrapped = true
 WinnerFrame.Name = "WinnerFrame"
 WinnerFrame.Parent = PlayerList
 WinnerFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-WinnerFrame.Position = UDim2.new(0.394424945, 0, 0.43315506, 0)
+WinnerFrame.Position = UDim2.new({0.364, 0},{0.62, 0})
 WinnerFrame.Size = UDim2.new(0, 273, 0, 225)
 WinnerFrame.Visible = false
 WinnerFrame.Draggable = true
@@ -235,13 +235,11 @@ Chooser.MouseButton1Click:Connect(function()
 		WinnerAvatar.Image = game.Players:GetUserThumbnailAsync(RandomPlayer.UserId, Enum.ThumbnailType.AvatarThumbnail, Enum.ThumbnailSize.Size420x420)
 		EndB.Text = RandomPlayer.Name
 		Chooser.Text = "Random Chooser"
-		game.Players:FindFirstChild(RandomPlayer):Destroy()
 	end
 	Close.MouseButton1Click:Connect(function()
-		if Can1 == false and Can == true then
-			WinnerFrame.Visible = false
-			Can = false
-		end
+		WinnerFrame.Visible = false
+		Can = false
+		Can1 = false
 	end)
 end)
 
@@ -298,4 +296,5 @@ while wait(0.1) do
 	Fill()
 	Heading.Text = "Players in this server " .. game.Players.NumPlayers .. "/" .. game.Players.MaxPlayers
 end
+
 
