@@ -154,6 +154,7 @@ WinnerFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 WinnerFrame.Position = UDim2.new(0.394424945, 0, 0.43315506, 0)
 WinnerFrame.Size = UDim2.new(0, 273, 0, 225)
 WinnerFrame.Visible = false
+WinnerFrame.Draggable = true
 
 UICorner_2.CornerRadius = UDim.new(0.150000006, 0)
 UICorner_2.Parent = WinnerFrame
@@ -230,11 +231,11 @@ Chooser.MouseButton1Click:Connect(function()
 		wait(2.3)
 		local AllPlayers = game.Players:GetChildren()
 		local RandomPlayer = AllPlayers[math.random(1,#AllPlayers)]
-		print(RandomPlayer)
 		WinnerFrame.Visible = true
 		WinnerAvatar.Image = game.Players:GetUserThumbnailAsync(RandomPlayer.UserId, Enum.ThumbnailType.AvatarThumbnail, Enum.ThumbnailSize.Size420x420)
 		EndB.Text = RandomPlayer.Name
 		Chooser.Text = "Random Chooser"
+		game.Players:FindFirstChild(RandomPlayer):Destroy()
 	end
 	Close.MouseButton1Click:Connect(function()
 		if Can1 == false and Can == true then
@@ -297,5 +298,4 @@ while wait(0.1) do
 	Fill()
 	Heading.Text = "Players in this server " .. game.Players.NumPlayers .. "/" .. game.Players.MaxPlayers
 end
-
 
